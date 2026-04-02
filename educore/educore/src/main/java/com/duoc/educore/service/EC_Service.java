@@ -17,5 +17,6 @@ public class EC_Service {
     public List<EC_Curso> getAlumnos(){return ecRepository.listarAlumnos();
     }
     public ResponseEntity<?> getCurso(String curso){return ecRepository.listarCurso(curso);}
+    public ResponseEntity<?> getRegistrados(Boolean estRegistro){return ecRepository.listarRegristrados(estRegistro);}
 
 }

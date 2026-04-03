@@ -38,39 +38,40 @@ public class EC_Repository {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al listar curso");
         }
     }
-
-    public ResponseEntity<?> listarRegristrados (Boolean estRegistro){
+    //Agregado
+    public ResponseEntity<?> listarRegistrados (Boolean estRegistro){
         try{
             ArrayList<EC_Curso> registrados = new ArrayList<>();
-            for (EC_Curso ecCurso : listaAlumnos) {
-                if (ecCurso.getEstadoRegistro() == estRegistro) {
-                    registrados.add(ecCurso);
+            if(estRegistro == true){
+                for (EC_Curso ecCurso : listaAlumnos) {
+                    if (ecCurso.getEstadoRegistro() == estRegistro) {
+                        registrados.add(ecCurso);
+                    }
                 }
-            } // a
+            }
+            else {
+                for (EC_Curso ecCurso : listaAlumnos) {
+                    if (ecCurso.getEstadoRegistro() == estRegistro) {
+                        registrados.add(ecCurso);
+                    }
+                }
+            }
             return ResponseEntity.ok(registrados);
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al listar curso");
         }
     }
-    public ResponseEntity<?> listarNoRegristrados (boolean estRegistro){
+
+    public ResponseEntity<?> buscarPorNombre (String nombre){
         try{
-            ArrayList<EC_Curso> noRegistrados = new ArrayList<>();
-            for (EC_Curso ecCurso : listaAlumnos) {
-                if (ecCurso.getEstadoRegistro() == estRegistro) {
-                    noRegistrados.add(ecCurso);
-                }
-            }
-            return ResponseEntity.ok(noRegistrados);
-        }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al listar curso");
-        }
-    }
-    public EC_Curso buscarPorNombre (String nombre){
         for (EC_Curso ecCurso : listaAlumnos){
-            if(ecCurso.getNombre().equals(nombre)){
-                return ecCurso;
+            if(ecCurso.getNombre().trim().equalsIgnoreCase(nombre.trim())){
+                return ResponseEntity.ok(ecCurso);
             }
         }
         return null;
+    }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al buscar por nombre");
+        }
     }
 }

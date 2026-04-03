@@ -26,5 +26,12 @@ public class EC_Controller {
     @GetMapping("/curso/{curso}")
     public ResponseEntity<?> listarCurso(@PathVariable String curso){return ecService.getCurso(curso);}
     // Hace falta que el usuario ingrese el estado si tengo un metodo para verdadero o falso?
+    @GetMapping("/registrados")
+    public ResponseEntity<?> listarRegistrados(){ return ecService.getRegistrados(true);
+    }
+    @GetMapping("/noregistrados")
+    public ResponseEntity<?> listarNoRegistrados(){return ecService.getNoRegistrados(false);}
+    @GetMapping("/nombre/{nombre}")
+    public ResponseEntity<?> buscarPorNombre(@PathVariable String nombre){return ecService.getNombre(nombre);}
 }
 

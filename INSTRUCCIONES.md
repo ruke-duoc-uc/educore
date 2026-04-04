@@ -10,4 +10,5 @@
 - `git remote add *Enlace de repositorio vacio*`
 - `git add *` `git add .`
 - `git commit -m "Mensaje de commit"`
-- `git push origin main`s
+- `git push origin main`
+![desc](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/250px-Tux.svg.png)

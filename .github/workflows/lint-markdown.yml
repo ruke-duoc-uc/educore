@@ -1,0 +1,22 @@
+name: "Revsion de markdown"
+
+on:
+  push:
+    branches: ["main","feature/**", "docs/**"]
+  pull_request:
+    branches: ["main"]
+jobs:
+  markdownlint:
+    name: "Check Documentation Quality"
+    runs-on: ubuntu-lastest
+    steps:
+      - name: "Checkout Code"
+        uses: "actions/checkout@v4"
+
+      - name: "Run Markdownlint"
+        uses: daviddanson/markdownlint-cli2-action@v16
+        with:
+          config: 'markdownlint.json'
+          globs: '**/*.md'
+      - name: "Aprobacion de Actions"
+        run: echo "Revision de MarkDown finalizada con exito. Documentacion Aprobada"

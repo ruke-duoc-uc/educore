@@ -32,6 +32,9 @@ public class EC_Controller {
     public ResponseEntity<?> buscarPorNombre(@PathVariable String nombre){return ecService.getNombre(nombre);}
     // En el caso de el siguiente metodo, el cuerpo de la clase se da en formato JSON
     @PostMapping
-    public ResponseEntity<?> agregarAlumno(@RequestBody EC_Curso alumno){return ecService.saveAlumno(alumno);}
+    public ResponseEntity<?> agregarAlumno(@RequestBody EC_Curso alumno){
+        if (alumno.getId() == null || alumno.getNombre() == null || alumno.getCurso() == null ||
+        )
+        return ecService.saveAlumno(alumno);}
 }
 

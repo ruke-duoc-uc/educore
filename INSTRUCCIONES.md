@@ -3,7 +3,9 @@
 ## Comandos necesarios
 
 ###### Sigue estos pasos en orden para asegurar que te conectaras a tu cuenta e inicialices el repo correctamente
+
 ###### Asegurate de que carpeta contendra el repo, este debe ser el unico con la carpeta oculta *.git*
+
 - `git init`
 - `git config user.name "n.usuario"`
 - `git config user.email "email.usuario"`

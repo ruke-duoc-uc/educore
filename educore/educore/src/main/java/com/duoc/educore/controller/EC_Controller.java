@@ -4,10 +4,7 @@ import com.duoc.educore.model.EC_Curso;
 import com.duoc.educore.service.EC_Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,5 +30,8 @@ public class EC_Controller {
     public ResponseEntity<?> listarNoRegistrados(){return ecService.getNoRegistrados(false);}
     @GetMapping("/nombre/{nombre}")
     public ResponseEntity<?> buscarPorNombre(@PathVariable String nombre){return ecService.getNombre(nombre);}
+    // En el caso de el siguiente metodo, el cuerpo de la clase se da en formato JSON
+    @PostMapping
+    public ResponseEntity<?> agregarAlumno(@RequestBody EC_Curso alumno){return ecService.saveAlumno(alumno);}
 }
 

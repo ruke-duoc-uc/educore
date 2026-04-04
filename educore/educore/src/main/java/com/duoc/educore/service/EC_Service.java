@@ -20,4 +20,5 @@ public class EC_Service {
     public ResponseEntity<?> getRegistrados(Boolean estRegistro){return ecRepository.listarRegistrados(estRegistro);}
     public ResponseEntity<?> getNoRegistrados(Boolean estRegistro){return ecRepository.listarRegistrados(estRegistro);}
     public ResponseEntity<?> getNombre(String nombre){return ecRepository.buscarPorNombre(nombre);}
+    public ResponseEntity<?> saveAlumno(EC_Curso alumno){return ecRepository.agregarAlumno(alumno);}
 }

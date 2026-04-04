@@ -74,4 +74,12 @@ public class EC_Repository {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al buscar por nombre");
         }
     }
+    public ResponseEntity<?> agregarAlumno (EC_Curso alumno){
+        try{
+            listaAlumnos.add(alumno);
+            return ResponseEntity.ok(alumno);
+        }catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al agregar alumno");
+        }
+    }
 }

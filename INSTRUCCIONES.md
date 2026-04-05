@@ -14,4 +14,11 @@
 - `git commit -m "Mensaje de commit"`
 - `git push origin main`
 
+### Código de python
+
+``` python
+nombre = input()
+print(f"Hola {nombre}")
+```
+
 ![desc](https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/250px-Tux.svg.png)
